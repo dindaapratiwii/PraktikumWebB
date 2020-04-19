@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script >
+        
+    var i,j,op1,op2,op,f;
+    function insert(i){
+       switch(i)
+        {
+            case 1:
+            document.form.textview.value=(document.form.textview.value)+"1";
+            break;
+            case 2:
+            document.form.textview.value=(document.form.textview.value)+"2";
+            break;
+            case 3:
+            document.form.textview.value=(document.form.textview.value)+"3";
+            break;
+            case 4:
+            document.form.textview.value=(document.form.textview.value)+"4";
+            break;
+            case 5:
+            document.form.textview.value=(document.form.textview.value)+"5";
+            break;
+            case 6:
+            document.form.textview.value=(document.form.textview.value)+"6";
+            break;
+            case 7:
+            document.form.textview.value=(document.form.textview.value)+"7";
+            break;
+            case 8:
+            document.form.textview.value=(document.form.textview.value)+"8";
+            break;
+            case 9:
+            document.form.textview.value=(document.form.textview.value)+"9";
+            break;
+            case 0:
+            document.form.textview.value=(document.form.textview.value)+"0";
+            break;
+            case 10:
+            document.form.textview.value=(document.form.textview.value)+".";
+            break;
+         }
+    }
+    function operation(j){
+        if(j==1){
+            op1=parseFloat(document.form.textview.value);
+            document.form.textview.value="";
+            op=1;
+        }
+
+        if(j==2){
+            op1=parseFloat(document.form.textview.value);
+            document.form.textview.value="";
+            op=2;
+        }
+
+        if(j==3){
+            op1=parseFloat(document.form.textview.value);
+            document.form.textview.value="";
+            op=3;
+        }
+        if(j==4){
+        op1=parseFloat(document.form.textview.value);
+        document.form.textview.value="";
+        op=4;
+        }
+        if(j==5){
+        op2=parseFloat(document.form.textview.value);
+            if(op==1){
+                f=op1+op2;
+                document.form.textview.value=f;
+            }
+            else if(op==2){
+                f=op1-op2;
+                document.form.textview.value=f;
+            }
+            else if(op==3){
+                f=op1*op2;
+                document.form.textview.value=f;
+            }
+            else if(op==4){
+            f=op1/op2;
+            document.form.textview.value=f;
+            }
+        }
+    }
+
+    function c(){
+            document.form.textview.value ="";
+        }
+
+        function back(){
+            var exp = document.form.textview.value;
+                document.form.textview.value = exp.substring(0,exp.length-1);
+        }
+    </script>
+
+
+
+
+</head>
+<body>
+    
+    <div class="main">
+        <form name="form">
+            <input class="textview" type="textview" name="textview">
+        </form>
+
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="C" onclick="c()"></td>
+                <td><input class="button" type="button" value="<" onclick="back()"></td>
+                <td><input class="button" type="button" value="/" onclick="operation(4)"></td>
+                <td><input class="button" type="button" value="x" onclick="operation(3)"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="button" type="button" value="-" onclick="operation(2)"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="button" type="button" value="+" onclick="operation(1)"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+                <td rowspan="5"><input class="button" style="height: 106px;" type="button" value="=" onclick="operation(5)"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="button" style="width: 106px;" type="button" value="0" onclick="insert(0)" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="." onclick="insert(10)" ></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
