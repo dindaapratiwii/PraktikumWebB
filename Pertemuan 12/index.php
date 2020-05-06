@@ -2,10 +2,10 @@
     session_start();
     if(isset($_SESSION['level'])){
       if($_SESSION['level'] == 'admin'){
-        header('Location: admin.php');
+        header('Location: admin/index.php');
       }
       if($_SESSION['level'] == 'petugas'){
-        header('Location: petugas.php');
+        header('Location: petugas/index.php');
       }
     }
     else{

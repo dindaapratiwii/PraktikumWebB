@@ -11,17 +11,14 @@ if(isset($_POST['login'])){
             if($row['level'] == "admin"){
                 $_SESSION['User'] = $row['email'];
                 $_SESSION['level'] = $row['level'];
-                header('Location: admin.php');
+                header('Location: admin/index.php');
             }
             else{
                 $_SESSION['User'] = $row['email'];
                 $_SESSION['level'] = $row['level'];
-                header('Location: petugas.php');
+                header('Location: petugas/index.php');
             }
         }
-    }else{
-        echo"<script>alert('Username atau password salah');document.location.href='index.php'</script>";
-      
     }
     
 }
